@@ -23,6 +23,9 @@
 hs_err_pid*
 replay_pid*
 
+# Visual Studio Code
+.vscode/
+
 # NetBeans
 **/nbproject/private/
 **/nbproject/Makefile-*.mk
