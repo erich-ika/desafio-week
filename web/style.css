@@ -1,7 +1,6 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: lightblue;
 }
 
 header {
@@ -32,10 +31,10 @@ main img {
 main>* {
     margin-top: 16px;
     border-radius: 10px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 main div {
-    background-color: white;
     padding: 1em;
 }
 
