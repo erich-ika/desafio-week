@@ -51,7 +51,7 @@
             </div>
         </main>
         <footer>
-            Copyright Â© 2023 Erich IKA
+            Copyright © 2023 Erich IKA
         </footer>
     </body>
 

@@ -14,7 +14,7 @@
     </header>
     <main>
         <div>
-            <h2>Marque seu horÃ¡rio</h2>
+            <h2>Marque seu horário</h2>
         </div>
         <div>
             <form action="" method="post">
@@ -47,7 +47,7 @@
         </div>
     </main>
     <footer>
-        Copyright Â© 2023 Erich IKA
+        Copyright © 2023 Erich IKA
     </footer>
 </body>
 

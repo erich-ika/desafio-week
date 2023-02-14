@@ -28,7 +28,7 @@
         </div>
     </main>
     <footer>
-        Copyright © 2023 Erich IKA
+        Copyright � 2023 Erich IKA
     </footer>
 </body>
 

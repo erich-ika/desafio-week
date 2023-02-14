@@ -18,8 +18,6 @@
             <h2>Cadastro</h2>
         </div>
         <div>
-            <p class="center">Já se cadastrou?</p>
-            <a href="/web/login/" class="button">Faça Login</a>
         </div>
         <div>
             <form action="/web/api/v1/customers.jsp" method="post">
@@ -36,8 +34,10 @@
         </div>
     </main>
     <footer>
-        Copyright © 2023 Erich IKA
     </footer>
 </body>
+                <p class="center">J� se cadastrou?</p>
+                <a href="/web/login/" class="button">Fa�a Login</a>
+            Copyright � 2023 Erich IKA
 
 </html>
