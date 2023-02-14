@@ -20,9 +20,9 @@
         <div>
             <form action="/web/api/v1/login.jsp" method="post">
                 <label for="tel">Telefone</label><br>
-                <input type="tel" name="tel" id="tel"><br>
+                <input type="tel" name="tel" id="tel" required><br>
                 <label for="password">Senha</label><br>
-                <input type="password" name="password" id="password"><br>
+                <input type="password" name="password" id="password" required><br>
                 <button class="button" type="submit">Login</button>
             </form>
         </div>
