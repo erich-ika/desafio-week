@@ -4,6 +4,10 @@ body {
     background-color: #202124;
 }
 
+.center {
+    text-align: center;
+}
+
 header {
     background-color: orange;
     margin: 0;
@@ -100,4 +104,3 @@ select {
     margin-bottom: 1em;
     width: 100%;
 }
-
