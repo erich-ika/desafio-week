@@ -6,6 +6,16 @@
 <jsp:setProperty name="obj" property="password"/>
 <jsp:setProperty name="obj" property="password2"/>
 <%
-    CustomerDAO dao = new CustomerDAO();
-    session.setAttribute("user", obj);
+    try {
+        CustomerDAO dao = new CustomerDAO();
+        dao.cadastrar(obj);
+        session.setAttribute("user", obj);
+        response.sendRedirect("/web/");
+    } catch (IllegalArgumentException e) {
+        session.setAttribute("error", "As senhas não coincidem!");
+        response.sendRedirect("/web/cadastro/");
+    } catch (RuntimeException e) {
+        session.setAttribute("error", "Erro ao se comunicar com o banco de dados...");
+        response.sendRedirect("/web/cadastro/");
+    }
 %>

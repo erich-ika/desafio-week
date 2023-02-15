@@ -114,3 +114,8 @@ select {
     text-decoration: underline;
     cursor: pointer;
 }
+
+.errormessage {
+    color: red;
+    text-align: center;
+}

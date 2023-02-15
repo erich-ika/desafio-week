@@ -31,5 +31,12 @@
         Copyright � 2023 Erich IKA
     </footer>
 </body>
+                <p class="errormessage">
+                    <%
+                        String message = (String)session.getAttribute("error");
+                        if (message != null) out.print(message);
+                        session.setAttribute("error", null);
+                    %>
+                </p>
 
 </html>

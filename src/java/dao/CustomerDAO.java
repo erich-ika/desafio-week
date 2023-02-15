@@ -8,8 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.naming.AuthenticationException;
 
 public class CustomerDAO {
@@ -70,7 +68,7 @@ public class CustomerDAO {
             customer.setTel(rs.getString("phone"));
             
         } catch (SQLException ex) {
-            Logger.getLogger(CustomerDAO.class.getName()).log(Level.SEVERE, null, ex);
+            throw new RuntimeException(ex);
         }
 
         return customer;

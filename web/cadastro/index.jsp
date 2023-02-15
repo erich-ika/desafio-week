@@ -35,6 +35,11 @@
                 <p class="center">J� se cadastrou?</p>
                 <a href="/web/login/" class="button">Fa�a Login</a>
             Copyright � 2023 Erich IKA
+                    <% 
+                        String message = (String)session.getAttribute("error");
+                        if (message != null) out.print(message);
+                        session.setAttribute("error", null);
+                    %>
                     <input type="text" name="name" id="name" required><br>
                     <input type="tel" name="tel" id="tel" required><br>
                     <input type="password" name="password" id="password" required><br>
