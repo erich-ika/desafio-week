@@ -19,10 +19,6 @@ public class CustomerDAO {
         con = ConnectionFactory.getConnection();
     }
 
-    public String toString(Customer customer) {
-        return customer.getName() + customer.getTel();
-    }
-
     public void cadastrar(Customer customer) {
         if (!customer.isConfirmed()) {
             throw new IllegalArgumentException("Senhas não coincidem");
@@ -67,7 +63,7 @@ public class CustomerDAO {
             customer.setId(rs.getInt("id"));
             customer.setName(rs.getString("name"));
             customer.setTel(rs.getString("phone"));
-            
+
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
