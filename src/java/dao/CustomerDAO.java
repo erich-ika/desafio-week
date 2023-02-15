@@ -99,36 +99,4 @@ public class CustomerDAO {
 
         return array;
     }
-
-    /*
-    public Aluno getAluno(String cpf) {
-        Aluno aluno = new Aluno();
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-        String sql = "select * from Aluno where Cpf = ?";
-        
-        try {
-            stmt = con.prepareStatement(sql);
-            stmt.setString(1, cpf);
-            rs = stmt.executeQuery();
-            if (rs.next()) {
-                aluno.setCpf(cpf);
-                aluno.setCurso(rs.getString("Curso"));
-                aluno.setDataIncio(rs.getDate("DataInicio"));
-                aluno.setDataTermino(rs.getDate("DataTermino"));
-                aluno.setEmail(rs.getString("Email"));
-                aluno.setIdAluno(rs.getInt("IdAluno"));
-                aluno.setIdSupervisor(rs.getInt("IdSupervisor"));
-                aluno.setNome(rs.getString("Nome"));
-                aluno.setPeriodo(rs.getString("Periodo"));
-                aluno.setRamal(rs.getString("Ramal"));
-                aluno.setTelefone(rs.getString("Telefone"));
-                aluno.setToken(rs.getString("Token"));
-            }
-            stmt.close();
-        } catch (SQLException u) {
-            throw new RuntimeException(u);
-        }
-        return aluno;
-    }*/
 }
