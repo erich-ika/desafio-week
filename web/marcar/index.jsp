@@ -45,6 +45,20 @@
                     <button class="button" type="submit">Marcar</button>
                 </form>
             </div>
+            <%@page import="dao.AppointmentDAO"%>
+            <%@page import="model.Appointment"%>
+            <%@page import="java.util.ArrayList"%>
+            <%
+                out.print("<table>");
+                AppointmentDAO dao = new AppointmentDAO();
+                ArrayList<Appointment> appointments = dao.getAppointments();
+                out.print(Appointment.HTMLTABLEHEADER);
+                
+                for (int i = 0; i < appointments.size(); i++) {
+                    out.print(appointments.get(i).toHTMLRow());
+                }
+                out.print("</table>");
+            %>
         </main>
         <footer>
             Copyright © 2023 Erich IKA

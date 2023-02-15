@@ -5,15 +5,15 @@ public class Service {
     private String name;
     private Double price;
 
-    public Service(int id, String name, Double price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
+    public Service() {
     }
     
-    public Service(String name, Double price) {
+    public Service(String name) {
         this.name = name;
-        this.price = price;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
     }
     
     public int getId() {

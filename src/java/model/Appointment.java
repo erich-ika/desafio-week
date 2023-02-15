@@ -1,18 +1,14 @@
 package model;
 
-import java.sql.Date;
-
 public class Appointment {
+
     private String date;
     private int time;
-    private int customer;
-    private int service;
+    private Customer customer;
+    private Service service;
+    public static String HTMLTABLEHEADER = "<tr><th>Data</th><th>Hora</th><th>Cliente</th><th>Serviço</th></tr>";
 
-    public Appointment(String date, int time, int customer, int service) {
-        this.date = date;
-        this.time = time;
-        this.customer = customer;
-        this.service = service;
+    public Appointment() {
     }
 
     public String getDate() {
@@ -31,19 +27,23 @@ public class Appointment {
         this.time = time;
     }
 
-    public int getCustomer() {
-        return customer;
+    public void setCustomer(String name) {
+        this.customer = new Customer(name);
     }
 
-    public void setCustomer(int customer) {
-        this.customer = customer;
+    public String getCustomer() {
+        return this.customer.getName();
     }
 
-    public int getService() {
-        return service;
+    public void setService(String name) {
+        this.service = new Service(name);
     }
 
-    public void setService(int service) {
-        this.service = service;
+    public String getService() {
+        return this.service.getName();
+    }
+
+    public String toHTMLRow() {
+        return "<tr><td>" + date + "</td><td>" + time + ":00h</td><td>" + customer.getName() + "</td><td>" + service.getName() + "</td></tr>";
     }
 }
