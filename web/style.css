@@ -119,3 +119,23 @@ select {
     color: red;
     text-align: center;
 }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+}
+
+td, th {
+  border: none;
+  text-align: left;
+  padding: 8px;
+  overflow-x: hidden;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

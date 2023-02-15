@@ -41,6 +41,20 @@
                     <button class="button" type="submit">Cadastre-se</button>
                 </form>
             </div>
+            <%@page import="dao.CustomerDAO"%>
+            <%@page import="model.Customer"%>
+            <%@page import="java.util.ArrayList"%>
+            <%
+                out.print("<table>");
+                CustomerDAO dao = new CustomerDAO();
+                ArrayList<Customer> customers = dao.getCustomers();
+                out.print(Customer.HTMLTABLEHEADER);
+                
+                for (int i = 0; i < customers.size(); i++) {
+                    out.print(customers.get(i).toHTMLRow());
+                }
+                out.print("</table>");
+            %>
         </main>
         <footer>
             Copyright © 2023 Erich IKA

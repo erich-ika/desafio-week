@@ -7,7 +7,8 @@ public class Customer {
     private String tel;
     private String password;
     private boolean confirmed;
-
+    public static String HTMLTABLEHEADER = "<tr><th>ID</th><th>Nome</th><th>Telefone</th><th>Hash</th></tr>";
+    
     public Customer() {
     }
 
@@ -53,5 +54,9 @@ public class Customer {
 
     public String toString() {
         return id + name + password + confirmed;
+    }
+    
+    public String toHTMLRow() {
+        return "<tr><td>" + id + "</td><td>" + name + "</td><td>" + tel + "</td><td>" + password + "</td></tr>";
     }
 }

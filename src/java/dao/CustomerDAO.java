@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import javax.naming.AuthenticationException;
 
 public class CustomerDAO {
@@ -73,6 +74,32 @@ public class CustomerDAO {
 
         return customer;
     }
+
+    public ArrayList<Customer> getCustomers() {
+        ArrayList<Customer> array = new ArrayList<>();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String sql = "select * from customer";
+
+        try {
+            stmt = con.prepareStatement(sql);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Customer customer = new Customer();
+                customer.setId(rs.getInt("id"));
+                customer.setName(rs.getString("name"));
+                customer.setTel(rs.getString("phone"));
+                customer.setPassword(rs.getString("hash"));
+                array.add(customer);
+            }
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+
+        return array;
+    }
+
     /*
     public Aluno getAluno(String cpf) {
         Aluno aluno = new Aluno();
