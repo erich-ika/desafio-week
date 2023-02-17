@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/web/style.css">
+        <script src="/web/menu.js"></script>
         <%@page import="model.Customer"%>
         <%
             Customer user = (Customer) session.getAttribute("user");
@@ -14,13 +15,13 @@
 
     <body>
         <nav id="nav">
-            <a href="#">Login</a>
+            <a href="/web/login/">Login</a>
             <br><br>
-            <a href="#">Cadastro</a>
+            <a href="/web/cadastro/">Cadastro</a>
             <br><br>
-            <a href="#">Marcar HorÃ¡rio</a>
+            <a href="/web/marcar/">Marcar Horário</a>
             <br><br><br>
-            <a href="#">Sair</a>
+            <a href="/web/api/v1/logout.jsp">Sair</a>
         </nav>
         <header>
             <h1>Yara Manicure</h1>
@@ -29,11 +30,11 @@
         <main>
             <div>
                 <% if (user == null) {%>
-                <h2>Junte-se a nï¿½s!</h2>
+                <h2>Junte-se a nós!</h2>
                 <a href="/web/cadastro/" class="button">Cadastre-se</a>
                 <% } else { %>
                 <h2>Bem-vinda(o), <%= user.getName() %></h2>
-                <a href="/web/marcar/" class="button">Marque seu horï¿½rio</a>
+                <a href="/web/marcar/" class="button">Marque seu horário</a>
                 <% } %>
             </div>
             <img src="https://st3.depositphotos.com/1000995/33559/i/1600/depositphotos_335598628-free-stock-photo-female-hands-lunar-black-manicure.jpg"
@@ -54,7 +55,7 @@
             </div>
         </main>
         <footer>
-            Copyright ï¿½ 2023 Erich IKA
+            Copyright © 2023 Erich IKA
         </footer>
     </body>
 
