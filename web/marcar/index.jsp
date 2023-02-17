@@ -19,6 +19,8 @@
 
     <body>
         <nav id="nav">
+            <a href="/web/">Início</a>
+            <br><br>
             <a href="/web/login/">Login</a>
             <br><br>
             <a href="/web/cadastro/">Cadastro</a>
