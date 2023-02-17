@@ -12,6 +12,7 @@ header {
     background-color: orange;
     margin: 0;
     position: fixed;
+    height: 42.4px;
     width: 100%;
     padding: 1em;
     margin-bottom: 100%;
@@ -105,14 +106,15 @@ select {
     width: 100%;
 }
 
-.loginout {
+.menubutton {
     color: white;
     position: fixed;
     right: 1em;
-    top: 1.5em;
+    top: 1em;
     text-shadow: none;
     text-decoration: underline;
     cursor: pointer;
+    filter: invert(1);
 }
 
 .errormessage {
@@ -121,21 +123,50 @@ select {
 }
 
 table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-  table-layout: fixed;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
 }
 
-td, th {
-  border: none;
-  text-align: left;
-  padding: 8px;
-  overflow-x: hidden;
-  overflow:hidden;
-  white-space:nowrap;
+td,
+th {
+    border: none;
+    text-align: left;
+    padding: 8px;
+    overflow-x: hidden;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+    background-color: #dddddd;
+}
+
+nav {
+    display: none;
+    position: fixed;
+    background-color: orange;
+    text-align: right;
+    width: 200px;
+    height: 100vh;
+    padding: 2em;
+    top: 74.4px;
+    right: 0;
+}
+
+nav.open-nav {
+    display: block;
+}
+
+nav a {
+    font-size: large;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }

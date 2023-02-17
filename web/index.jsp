@@ -13,24 +13,27 @@
     </head>
 
     <body>
+        <nav id="nav">
+            <a href="#">Login</a>
+            <br><br>
+            <a href="#">Cadastro</a>
+            <br><br>
+            <a href="#">Marcar HorÃ¡rio</a>
+            <br><br><br>
+            <a href="#">Sair</a>
+        </nav>
         <header>
             <h1>Yara Manicure</h1>
-            <%
-                if (user == null) {
-            %><a class="loginout" href="/web/login/">Login</a><%
-                } else {
-            %><a class="loginout" href="/web/api/v1/logout.jsp">Sair</a><%
-                }
-            %>
+            <img class="menubutton" src="/web/assets/menu.png" alt="menu" onclick="openNav()">
         </header>
         <main>
             <div>
                 <% if (user == null) {%>
-                <h2>Junte-se a nós!</h2>
+                <h2>Junte-se a nï¿½s!</h2>
                 <a href="/web/cadastro/" class="button">Cadastre-se</a>
                 <% } else { %>
                 <h2>Bem-vinda(o), <%= user.getName() %></h2>
-                <a href="/web/marcar/" class="button">Marque seu horário</a>
+                <a href="/web/marcar/" class="button">Marque seu horï¿½rio</a>
                 <% } %>
             </div>
             <img src="https://st3.depositphotos.com/1000995/33559/i/1600/depositphotos_335598628-free-stock-photo-female-hands-lunar-black-manicure.jpg"
@@ -51,7 +54,7 @@
             </div>
         </main>
         <footer>
-            Copyright © 2023 Erich IKA
+            Copyright ï¿½ 2023 Erich IKA
         </footer>
     </body>
 
