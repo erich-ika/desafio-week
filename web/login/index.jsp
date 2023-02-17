@@ -12,6 +12,7 @@
     <body>
         <header>
             <h1>Yara Manicure</h1>
+            <a class="loginout" href="/web/">Home</a>
         </header>
         <main>
             <div>

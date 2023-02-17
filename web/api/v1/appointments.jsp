@@ -8,5 +8,6 @@
     AppointmentDAO dao = new AppointmentDAO();
     obj.customer = (Customer) session.getAttribute("user");
     dao.cadastrar(obj);
+    session.setAttribute("error", "Horário marcado com sucesso!");
     response.sendRedirect("/web/marcar/");
 %>

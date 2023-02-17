@@ -58,4 +58,25 @@ public class AppointmentDAO {
 
         return array;
     }
+    
+    public ArrayList<Integer> getAppointmentsByDate(String date) {
+        ArrayList<Integer> array = new ArrayList<>();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String sql = "select time from appointment where date = ?;";
+
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setString(1, date);
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                array.add(rs.getInt("time"));
+            }
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+        
+        return array;
+    }
 }

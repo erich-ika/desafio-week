@@ -18,15 +18,46 @@
     <body>
         <header>
             <h1>Yara Manicure</h1>
+            <a class="loginout" href="/web/">Home</a>
         </header>
         <main>
             <div>
                 <h2>Marque seu horário</h2>
+                <p class="errormessage">
+                    <%
+                        String message = (String)session.getAttribute("error");
+                        if (message != null) out.print(message);
+                        session.setAttribute("error", null);
+                    %>
+                </p>
             </div>
             <div>
+                <form action="." method="get">
+                    <label for="date">Data</label><br>
+                    <input type="date" name="date" id="date" value="<%= request.getParameter("date") %>" onchange="this.form.submit()" required>
+                </form>
                 <form action="/web/api/v1/appointments.jsp" method="post">
+                    <input type="date" name="date" value="<%= request.getParameter("date") %>" style="display: none" required>
+                    <%
+                        String date = request.getParameter("date");
+                        boolean selected = date != null;
+                    %>
+                    <label for="time">Horário</label><br>
+                    <select name="time" id="time" required <%= selected ? "" : "disabled" %>>
+                        <option value=""></option>
+                        <%
+                            AppointmentDAO dao = new AppointmentDAO();                            
+                            if (selected) {
+                                ArrayList<Integer> ocupados = dao.getAppointmentsByDate(date);
+                                for (int i = 8; i < 18; i++) {
+                                    if (!ocupados.contains(i))
+                                        out.print("<option value=\"" + i + "\">" + i + ":00</option>");
+                                }
+                            }
+                        %>
+                    </select><br>
                     <label for="service">Serviço</label><br>
-                    <select name="service" id="service" required>
+                    <select name="service" id="service" required <%= selected ? "" : "disabled" %>>
                         <option value=""></option>
                         <%@page import="dao.ServiceDAO"%>
                         <%@page import="model.Service"%>
@@ -40,23 +71,6 @@
                             }
                         %>
                     </select><br>
-                    <label for="date">Data</label><br>
-                    <input type="date" name="date" id="date" required>
-                    <label for="time">Horário</label><br>
-                    <select name="time" id="time" required>
-                        <option value=""></option>
-                        <option value="8">08:00</option>
-                        <option value="9">09:00</option>
-                        <option value="10">10:00</option>
-                        <option value="11">11:00</option>
-                        <option value="13">13:00</option>
-                        <option value="14">14:00</option>
-                        <option value="15">15:00</option>
-                        <option value="16">16:00</option>
-                        <option value="17">17:00</option>
-                        <option value="18">18:00</option>
-                        <option value="19">19:00</option>
-                    </select><br>
                     <button class="button" type="submit">Marcar</button>
                 </form>
             </div>
@@ -64,8 +78,7 @@
             <%@page import="model.Appointment"%>
             <%@page import="java.util.ArrayList"%>
             <%
-                out.print("<table>");
-                AppointmentDAO dao = new AppointmentDAO();
+                out.print("<br><br><br><br><br><br><br><br><br><table>");
                 ArrayList<Appointment> appointments = dao.getAppointments();
                 out.print(Appointment.HTMLTABLEHEADER);
                 

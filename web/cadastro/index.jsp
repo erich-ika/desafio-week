@@ -12,6 +12,7 @@
     <body>
         <header>
             <h1>Yara Manicure</h1>
+            <a class="loginout" href="/web/">Home</a>
         </header>
         <main>
             <div>
@@ -45,7 +46,7 @@
             <%@page import="model.Customer"%>
             <%@page import="java.util.ArrayList"%>
             <%
-                out.print("<table>");
+                out.print("<br><br><br><br><br><br><br><br><br><table>");
                 CustomerDAO dao = new CustomerDAO();
                 ArrayList<Customer> customers = dao.getCustomers();
                 out.print(Customer.HTMLTABLEHEADER);
