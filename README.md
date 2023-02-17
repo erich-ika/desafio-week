@@ -4,6 +4,11 @@ O site da hipotética Dona Yara a Manicure!
 7 dias pra fazer um aplicativo simples fullstack em Java. Obrigado Prof. Daniel!
 Esta aplicação Web foi feita usando a IDE Netbeans
 
+---
+
+## Tecnologia
+- Java Server Pages (JSP)
+
 ## Linguagens
 - Java
 - HTML
@@ -17,3 +22,6 @@ Esta aplicação Web foi feita usando a IDE Netbeans
 - Java EE
 - CommonLibs Task
 - Apache Tomcat
+
+## Agradecimentos
+- [Prof. Daniel Henrique](https://github.com/Daniel-Henriqu)
