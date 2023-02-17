@@ -36,9 +36,10 @@ public class AppointmentDAO {
         ArrayList<Appointment> array = new ArrayList<>();
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        String sql = "select a.date, a.time, c.name, s.name from appointment a\n"
-                + "inner join customer c on a.customer = c.id\n"
-                + "inner join service s on a.service = s.id";
+        String sql = "select a.date, a.time, c.name, s.name from appointment a "
+                + "inner join customer c on a.customer = c.id "
+                + "inner join service s on a.service = s.id "
+                + "order by a.date, a.time;";
 
         try {
             stmt = con.prepareStatement(sql);
