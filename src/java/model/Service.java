@@ -35,4 +35,8 @@ public class Service {
     public void setPrice(Double price) {
         this.price = price;
     }
+    
+    public String toHTMLSelectOptions() {
+        return "<option value=\"" + id + "\">" + name + " (R$ " + price + ")</option>";
+    }
 }

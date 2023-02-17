@@ -4,11 +4,13 @@ public class Appointment {
 
     private String date;
     private int time;
-    private Customer customer;
-    private Service service;
+    public Customer customer;
+    public Service service;
     public static String HTMLTABLEHEADER = "<tr><th>Data</th><th>Hora</th><th>Cliente</th><th>Serviço</th></tr>";
 
     public Appointment() {
+        customer = new Customer();
+        service = new Service();
     }
 
     public String getDate() {
@@ -27,20 +29,9 @@ public class Appointment {
         this.time = time;
     }
 
-    public void setCustomer(String name) {
-        this.customer = new Customer(name);
-    }
-
-    public String getCustomer() {
-        return this.customer.getName();
-    }
-
-    public void setService(String name) {
-        this.service = new Service(name);
-    }
-
-    public String getService() {
-        return this.service.getName();
+    public void setService(int id) { // for JSP compatibility
+        this.service = new Service();
+        this.service.setId(id);
     }
 
     public String toHTMLRow() {

@@ -16,6 +16,22 @@ public class AppointmentDAO {
         con = ConnectionFactory.getConnection();
     }
 
+    public void cadastrar(Appointment appointment) {
+        PreparedStatement stmt = null;
+        String sql = "INSERT INTO yara.appointment (date, time, customer, service) VALUES (?, ?, ?, ?);";
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setString(1, appointment.getDate());
+            stmt.setInt(2, appointment.getTime());
+            stmt.setInt(3, appointment.customer.getId());
+            stmt.setInt(4, appointment.service.getId());
+            stmt.execute();
+            stmt.close();
+        } catch (SQLException u) {
+            throw new RuntimeException(u);
+        }
+    }
+
     public ArrayList<Appointment> getAppointments() {
         ArrayList<Appointment> array = new ArrayList<>();
         PreparedStatement stmt = null;
@@ -32,8 +48,8 @@ public class AppointmentDAO {
                 Appointment appointment = new Appointment();
                 appointment.setDate(rs.getString("date"));
                 appointment.setTime(rs.getInt("time"));
-                appointment.setService(rs.getString("c.name"));
-                appointment.setCustomer(rs.getString("s.name"));
+                appointment.service.setName(rs.getString("c.name"));
+                appointment.customer.setName(rs.getString("s.name"));
                 array.add(appointment);
             }
         } catch (SQLException ex) {

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<%@page import="model.Customer"%>
 <html>
 
     <head>
@@ -7,6 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/web/style.css">
+        <%@page import="model.Customer"%>
         <%
             Customer user = (Customer) session.getAttribute("user");
         %>
