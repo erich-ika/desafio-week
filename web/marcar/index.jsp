@@ -6,19 +6,30 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/web/style.css">
+        <script src="/web/menu.js"></script>
         <%@page import="model.Customer"%>
         <%
             Customer user = (Customer) session.getAttribute("user");
             if (user == null) {
-                response.sendRedirect("/web/");
+                session.setAttribute("error", "Você precisa se cadastrar primeiro!");
+                response.sendRedirect("/web/cadastro/");
             }
         %>
     </head>
 
     <body>
+        <nav id="nav">
+            <a href="/web/login/">Login</a>
+            <br><br>
+            <a href="/web/cadastro/">Cadastro</a>
+            <br><br>
+            <a href="/web/marcar/">Marcar Horário</a>
+            <br><br><br>
+            <a href="/web/api/v1/logout.jsp">Sair</a>
+        </nav>
         <header>
             <h1>Yara Manicure</h1>
-            <a class="loginout" href="/web/">Home</a>
+            <img class="menubutton" src="/web/assets/menu.png" alt="menu" onclick="openNav()">
         </header>
         <main>
             <div>
